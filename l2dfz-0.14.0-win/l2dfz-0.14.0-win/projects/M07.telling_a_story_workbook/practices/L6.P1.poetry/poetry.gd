@@ -16,9 +16,13 @@ that you can finish in 1 hour
 a task that's always taken you 9
 
 You'll be a gamedev, my student"""
-var appearance_time := 10.0
+var appearance_time := 1.0
 
 func _ready() -> void:
 	rich_text_label.text = lines
+	rich_text_label.visible_ratio = 0.0
+	var tween := create_tween()
+	var text_appearing_duration := 1.2
+	tween.tween_property(rich_text_label, "visible_ratio", 1.0, text_appearing_duration)
 	# Make sure to start the visible ratio at 0
 	# Create a tween, and grow the visible ratio to 1 over appearance_time

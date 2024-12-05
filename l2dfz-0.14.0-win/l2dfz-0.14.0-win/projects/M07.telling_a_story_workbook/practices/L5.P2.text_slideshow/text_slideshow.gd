@@ -1,5 +1,8 @@
 extends ColorRect
 
+@onready var rich_text_label: RichTextLabel = %RichTextLabel
+@onready var button: Button = %Button
+
 var items: Array[String] = [
 	"Strings. Ints. Floats. Nulls.",
 	"Long ago, the four types lived together in harmony.",
@@ -8,10 +11,6 @@ var items: Array[String] = [
 	"But when the world needed them most, they were studying on GDQuest.",
 ]
 var item_index := 0
-
-@onready var rich_text_label: RichTextLabel = %RichTextLabel
-@onready var button: Button = %Button
-
 
 func _ready() -> void:
 	button.pressed.connect(advance)
