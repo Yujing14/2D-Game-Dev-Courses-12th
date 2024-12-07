@@ -6,11 +6,12 @@ extends Control
 
 var dialogue_items: Array[String] = [
 	"Hello there!",
-	"The sky is quite blue huh?",
-	"I really like sunny days!",
+	"The work for me to do is tough......",
+	"Let's make our best effort to reach to sucess!",
+	"I think I got it? Did I?",
 	"Goodbye! See you next time!"
 ]
-## Holds the index of the currently displayed text
+
 var current_item_index := 0
 
 func _ready() -> void:
