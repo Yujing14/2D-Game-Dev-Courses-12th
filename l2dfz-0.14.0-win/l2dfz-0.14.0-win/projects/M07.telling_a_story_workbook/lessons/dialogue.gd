@@ -20,7 +20,7 @@ var bodies := {
 var dialogue_items: Array[Dictionary] = [
 	{
 		"expression": expressions["regular"],
-		"text": "Hello there!",
+		"text": "Hello [wave] there! [/wave]",
 		"character": bodies["sophia"],
 	},
 	{
@@ -30,7 +30,7 @@ var dialogue_items: Array[Dictionary] = [
 	},
 	{
 		"expression": expressions["sad"],
-		"text": "The coding work for me to do lately is tough......",
+		"text": "The coding work for me to do lately is [shake] tough[/shake]......",
 		"character": bodies["sophia"],
 	},
 		{
@@ -40,7 +40,7 @@ var dialogue_items: Array[Dictionary] = [
 	},
 	{
 		"expression": expressions["happy"],
-		"text": "But I will do my very best to finish all the work!",
+		"text": "But I will do my very BEST[tornado freq=3.0][rainbow val=1.0] to finish all the work![/rainbow][/tornado]",
 		"character": bodies["sophia"],
 	},
 	{
