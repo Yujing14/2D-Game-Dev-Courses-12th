@@ -11,6 +11,8 @@ var expressions := {
 	"sad": preload("res://assets/emotion_sad.png"),
 }
 
+
+
 @onready var body: TextureRect = %Body
 @onready var expression: TextureRect = %Expression
 @onready var row_bodies: HBoxContainer = %RowBodies

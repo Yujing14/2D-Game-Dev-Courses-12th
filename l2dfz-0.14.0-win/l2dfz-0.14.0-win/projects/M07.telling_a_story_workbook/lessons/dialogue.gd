@@ -12,29 +12,64 @@ var expressions := {
 	"sad": preload ("res://assets/emotion_sad.png"),
 }
 
+var bodies := {
+	"sophia": preload ("res://assets/sophia.png"),
+	"pink": preload ("res://assets/pink.png")
+}
 
 var dialogue_items: Array[Dictionary] = [
 	{
 		"expression": expressions["regular"],
-		"text": "Hello there!"
-	},
-	{
-		"expression": expressions["sad"],
-		"text": "The work for me to do is tough......"
-	},
-	{
-		"expression": expressions["happy"],
-		"text": "Let's make our best effort to reach to sucess!",
+		"text": "Hello there!",
+		"character": bodies["sophia"],
 	},
 	{
 		"expression": expressions["regular"],
-		"text": "I think I got it? Did I?",
+		"text": "Hello! Long time no see!",
+		"character": bodies["pink"],
+	},
+	{
+		"expression": expressions["sad"],
+		"text": "The coding work for me to do lately is tough......",
+		"character": bodies["sophia"],
+	},
+		{
+		"expression": expressions["sad"],
+		"text": "That is a sad news to hear of...",
+		"character": bodies["pink"],
+	},
+	{
+		"expression": expressions["happy"],
+		"text": "But I will do my very best to finish all the work!",
+		"character": bodies["sophia"],
+	},
+	{
+		"expression": expressions["happy"],
+		"text": "Yes! I believe in you!",
+		"character": bodies["pink"],
+	},
+	{
+		"expression": expressions["regular"],
+		"text": "Now I think I am good with the work now since I finished it.",
+		"character": bodies["sophia"],
+	},
+		{
+		"expression": expressions["regular"],
+		"text": "Glad to hear about that.",
+		"character": bodies["pink"],
 	},
 	{
 		"expression": expressions["happy"],
 		"text": "Goodbye! See you next time!",
+		"character": bodies["sophia"],
+	},
+		{
+		"expression": expressions["happy"],
+		"text": "Bye bye~ See you~",
+		"character": bodies["pink"],
 	},
 ]
+
 
 
 var current_item_index := 0
@@ -47,9 +82,10 @@ func show_text() -> void:
 	var current_item := dialogue_items[current_item_index]
 	rich_text_label.text = current_item["text"]
 	expression.texture = current_item["expression"]
+	body.texture = current_item["character"]
 	rich_text_label.visible_ratio = 0.0
 	var tween := create_tween()
-	var text_appearing_duration := 1.2
+	var text_appearing_duration: float = current_item["text"].length() / 30.0
 	tween.tween_property(rich_text_label, "visible_ratio", 1.0, text_appearing_duration)
 	var sound_max_length := audio_stream_player.stream.get_length() - text_appearing_duration
 	var sound_start_position := randf() * sound_max_length
