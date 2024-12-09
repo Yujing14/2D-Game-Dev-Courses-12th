@@ -1,0 +1,78 @@
+[gd_scene load_steps=8 format=3 uid="uid://cp3doo1v5l6dt"]
+
+[ext_resource type="Theme" path="res://lessons/main_theme.tres" id="1_v7umk"]
+[ext_resource type="Script" path="res://lessons/expressions.gd" id="2_lbjvm"]
+[ext_resource type="Shader" path="res://assets/sliding_background.gdshader" id="3_kcoo6"]
+[ext_resource type="Texture2D" uid="uid://bnly1gkbxw6b5" path="res://assets/bubble_pattern.png" id="4_uqn4l"]
+[ext_resource type="Texture2D" uid="uid://copkt78vgp37i" path="res://assets/sophia.png" id="5_52gqr"]
+[ext_resource type="Texture2D" uid="uid://d000xjtr4iqtk" path="res://assets/emotion_regular.png" id="6_levy4"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_3g3lh"]
+shader = ExtResource("3_kcoo6")
+shader_parameter/bg_color = Color(1, 0.796078, 0.490196, 1)
+shader_parameter/pattern_color = Color(1, 0.988235, 0.639216, 1)
+shader_parameter/pattern_size = 256.0
+shader_parameter/pattern_sampler = ExtResource("4_uqn4l")
+
+[node name="Expressions" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_v7umk")
+script = ExtResource("2_lbjvm")
+
+[node name="Background" type="ColorRect" parent="."]
+material = SubResource("ShaderMaterial_3g3lh")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Body" type="TextureRect" parent="."]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("5_52gqr")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Expression" type="TextureRect" parent="Body"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 2.0
+offset_top = 64.0
+offset_right = -11.9999
+offset_bottom = -18.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("6_levy4")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 0
+offset_left = 75.0
+offset_top = 58.0
+offset_right = 600.0
+offset_bottom = 254.0
+metadata/_edit_group_ = true
+
+[node name="RowBodies" type="HBoxContainer" parent="VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="RowExpressions" type="HBoxContainer" parent="VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
