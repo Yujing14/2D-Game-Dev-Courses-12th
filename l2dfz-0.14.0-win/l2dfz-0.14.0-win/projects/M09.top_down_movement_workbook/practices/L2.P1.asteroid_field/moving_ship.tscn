@@ -1,8 +1,8 @@
-[gd_scene load_steps=8 format=3]
+[gd_scene load_steps=8 format=3 uid="uid://bmgg3namjfv56"]
 
-[ext_resource type="Script" path="res://practices/L2.P1.asteroid_field/moving_ship.gd" id="1_u5fyp"]
-[ext_resource type="Texture2D" path="res://assets/practice_assets/shape_ship.png" id="2_3n1wp"]
-[ext_resource type="Texture2D" path="res://assets/practice_assets/ellipse_white.png" id="3_c076b"]
+[ext_resource type="Script" path="res://practices/L2.P1.asteroid_field/moving_ship.gd" id="1_n0e2a"]
+[ext_resource type="Texture2D" uid="uid://d1xp2mgpkkc42" path="res://assets/practice_assets/shape_ship.png" id="2_3n1wp"]
+[ext_resource type="Texture2D" uid="uid://bkueifls7csiy" path="res://assets/practice_assets/ellipse_white.png" id="3_c076b"]
 
 [sub_resource type="Curve" id="Curve_8vjn6"]
 _data = [Vector2(0, 0.663194), 0.0, 0.0, 0, 0, Vector2(1, 0), -0.0319997, 0.0, 0, 0]
@@ -21,7 +21,7 @@ scale_curve = SubResource("CurveTexture_gyk3c")
 radius = 52.0
 
 [node name="CharacterBody2D" type="CharacterBody2D"]
-script = ExtResource("1_u5fyp")
+script = ExtResource("1_n0e2a")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("2_3n1wp")

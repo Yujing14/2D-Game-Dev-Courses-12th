@@ -14,7 +14,7 @@ var direction := Vector2.ZERO
 
 func _physics_process(delta: float) -> void:
 	direction = Input.get_vector("move_left", "move_right", "move_up", "move_down")
-	velocity = velocity.lerp(direction * max_speed, 0.05)
+	velocity = direction * max_speed
 	sprite_2d.rotation = velocity.angle()
 	move_and_slide()
 	
