@@ -1,8 +1,8 @@
 extends Node2D
 
 @onready var _finish_line: FinishLine = %FinishLine
-
-# Called when the node enters the scene tree for the first time.
+@onready var _count_down: CountDown = %CountDown
+@onready var _runner: Runner = %Runner
 func _ready() -> void:
 	_finish_line.body_entered.connect(func (body: Node) -> void:
 		if body is not Runner:
@@ -24,8 +24,9 @@ func _ready() -> void:
 	_finish_line.confettis_finished.connect(
 		get_tree().reload_current_scene
 	)
-
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass
+	_count_down.start_counting()
+	_count_down.counting_finished.connect(
+		func() -> void:
+			_runner.set_physics_process(true)
+	)
+	_runner.set_physics_process(false)

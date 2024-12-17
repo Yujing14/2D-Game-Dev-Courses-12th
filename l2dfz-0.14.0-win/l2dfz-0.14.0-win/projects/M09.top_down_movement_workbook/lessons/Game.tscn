@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://bgbpgo5yvlisi"]
+[gd_scene load_steps=10 format=3 uid="uid://bgbpgo5yvlisi"]
 
 [ext_resource type="Script" path="res://lessons/game.gd" id="1_1tkft"]
 [ext_resource type="Texture2D" uid="uid://5vl7p0xb7nd8" path="res://assets/circuit_background.png" id="1_b46nt"]
@@ -6,13 +6,17 @@
 [ext_resource type="PackedScene" uid="uid://xl56q8amb611" path="res://assets/finish_line/finish_line.tscn" id="3_b2ovx"]
 [ext_resource type="PackedScene" uid="uid://dsvg7q1jaa5bo" path="res://lessons/simple_obstacle.tscn" id="3_fkruu"]
 [ext_resource type="PackedScene" uid="uid://cas0hvyk0d8yh" path="res://lessons/circuit.tscn" id="4_lo4cd"]
+[ext_resource type="Theme" uid="uid://cdcyvsn1fp8wa" path="res://assets/countdown/count_down_theme.tres" id="7_uhda7"]
+[ext_resource type="Script" path="res://assets/countdown/count_down.gd" id="8_cqr4a"]
+[ext_resource type="PackedScene" uid="uid://dnh7bqw83sxef" path="res://pause_screen.tscn" id="9_qo8kh"]
 
 [node name="Game" type="Node2D"]
 y_sort_enabled = true
 script = ExtResource("1_1tkft")
 
 [node name="Runner" parent="." instance=ExtResource("2_q5rld")]
-position = Vector2(-1270, -111)
+unique_name_in_owner = true
+position = Vector2(-1236, -196)
 
 [node name="FinishLine" parent="." instance=ExtResource("3_b2ovx")]
 unique_name_in_owner = true
@@ -39,3 +43,27 @@ position = Vector2(-594, -936)
 [node name="Circuit" parent="." instance=ExtResource("4_lo4cd")]
 z_index = -1
 position = Vector2(4, 31)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="CountDown" type="Label" parent="CanvasLayer"]
+unique_name_in_owner = true
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -45.5
+offset_top = -109.5
+offset_right = 45.5
+offset_bottom = 109.5
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("7_uhda7")
+text = "3"
+horizontal_alignment = 1
+vertical_alignment = 1
+script = ExtResource("8_cqr4a")
+
+[node name="PauseScreen" parent="CanvasLayer" instance=ExtResource("9_qo8kh")]
+menu_opened_amount = 1.0
