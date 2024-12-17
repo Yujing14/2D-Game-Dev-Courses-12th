@@ -1,7 +1,7 @@
-[gd_scene load_steps=3 format=3 uid="uid://lc2kcg6abttg"]
+[gd_scene load_steps=3 format=3 uid="uid://ctynoy5ql5v44"]
 
 [ext_resource type="PackedScene" uid="uid://chkrmqdqbln4f" path="res://assets/practice_assets/asteroid_spawner.tscn" id="1_14tpk"]
-[ext_resource type="PackedScene" uid="uid://bmgg3namjfv56" path="res://practices/L2.P1.asteroid_field/moving_ship.tscn" id="3_uhcq7"]
+[ext_resource type="PackedScene" path="res://practices/L2.P1.asteroid_field/moving_ship.tscn" id="3_o0xmu"]
 
 [node name="Background" type="Node2D"]
 
@@ -24,4 +24,4 @@ offset_top = -300.0
 offset_right = 684.0
 offset_bottom = 300.0
 
-[node name="CharacterBody2D" parent="." instance=ExtResource("3_uhcq7")]
+[node name="CharacterBody2D" parent="." instance=ExtResource("3_o0xmu")]
