@@ -1,32 +1,41 @@
-[gd_scene load_steps=5 format=3 uid="uid://bgbpgo5yvlisi"]
+[gd_scene load_steps=7 format=3 uid="uid://bgbpgo5yvlisi"]
 
-[ext_resource type="PackedScene" uid="uid://bvbyhkmylb7eh" path="res://lessons/runner.tscn" id="1_12i14"]
-[ext_resource type="PackedScene" uid="uid://dsvg7q1jaa5bo" path="res://lessons/SimpleObstacle.tscn" id="2_vnlj1"]
-[ext_resource type="Texture2D" uid="uid://5vl7p0xb7nd8" path="res://assets/circuit_background.png" id="3_uqx33"]
-[ext_resource type="PackedScene" uid="uid://cas0hvyk0d8yh" path="res://lessons/Circuit.tscn" id="4_dq6m5"]
+[ext_resource type="Script" path="res://lessons/game.gd" id="1_1tkft"]
+[ext_resource type="Texture2D" uid="uid://5vl7p0xb7nd8" path="res://assets/circuit_background.png" id="1_b46nt"]
+[ext_resource type="PackedScene" uid="uid://bvbyhkmylb7eh" path="res://lessons/runner.tscn" id="2_q5rld"]
+[ext_resource type="PackedScene" uid="uid://xl56q8amb611" path="res://assets/finish_line/finish_line.tscn" id="3_b2ovx"]
+[ext_resource type="PackedScene" uid="uid://dsvg7q1jaa5bo" path="res://lessons/simple_obstacle.tscn" id="3_fkruu"]
+[ext_resource type="PackedScene" uid="uid://cas0hvyk0d8yh" path="res://lessons/circuit.tscn" id="4_lo4cd"]
 
 [node name="Game" type="Node2D"]
 y_sort_enabled = true
+script = ExtResource("1_1tkft")
+
+[node name="Runner" parent="." instance=ExtResource("2_q5rld")]
+position = Vector2(-1270, -111)
+
+[node name="FinishLine" parent="." instance=ExtResource("3_b2ovx")]
+unique_name_in_owner = true
+position = Vector2(-1341, -160)
+area_width = 256
 
 [node name="CircuitBackground" type="Sprite2D" parent="."]
 z_index = -1
-texture = ExtResource("3_uqx33")
+texture = ExtResource("1_b46nt")
+metadata/_edit_lock_ = true
 
-[node name="Runner" parent="." instance=ExtResource("1_12i14")]
-position = Vector2(-1144, -431)
-
-[node name="SimpleObstacle" parent="." instance=ExtResource("2_vnlj1")]
+[node name="SimpleObstacle" parent="." instance=ExtResource("3_fkruu")]
 position = Vector2(380, -808)
 
-[node name="SimpleObstacle2" parent="." instance=ExtResource("2_vnlj1")]
+[node name="SimpleObstacle2" parent="." instance=ExtResource("3_fkruu")]
 position = Vector2(88, -950)
 
-[node name="SimpleObstacle3" parent="." instance=ExtResource("2_vnlj1")]
+[node name="SimpleObstacle3" parent="." instance=ExtResource("3_fkruu")]
 position = Vector2(-250, -808)
 
-[node name="SimpleObstacle4" parent="." instance=ExtResource("2_vnlj1")]
+[node name="SimpleObstacle4" parent="." instance=ExtResource("3_fkruu")]
 position = Vector2(-594, -936)
 
-[node name="Circuit" parent="." instance=ExtResource("4_dq6m5")]
+[node name="Circuit" parent="." instance=ExtResource("4_lo4cd")]
 z_index = -1
 position = Vector2(4, 31)

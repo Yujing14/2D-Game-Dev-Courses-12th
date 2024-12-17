@@ -3,6 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://cyi426tkmrmjy" path="res://assets/circuit_obstacle.png" id="1_d7ti1"]
 
 [node name="Circuit" type="StaticBody2D"]
+metadata/_edit_lock_ = true
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("1_d7ti1")

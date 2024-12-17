@@ -9,6 +9,7 @@
 ##
 ## [FinishLine] also has a [method pop_confettis] method which pops
 ## confettis and congratulate the player.
+
 @tool
 @icon("finish_line.svg")
 class_name FinishLine extends Area2D
