@@ -1,10 +1,11 @@
-[gd_scene load_steps=10 format=3 uid="uid://bgbpgo5yvlisi"]
+[gd_scene load_steps=11 format=3 uid="uid://bgbpgo5yvlisi"]
 
 [ext_resource type="Script" path="res://lessons/game.gd" id="1_1tkft"]
 [ext_resource type="Texture2D" uid="uid://5vl7p0xb7nd8" path="res://assets/circuit_background.png" id="1_b46nt"]
 [ext_resource type="PackedScene" uid="uid://bvbyhkmylb7eh" path="res://lessons/runner.tscn" id="2_q5rld"]
 [ext_resource type="PackedScene" uid="uid://xl56q8amb611" path="res://assets/finish_line/finish_line.tscn" id="3_b2ovx"]
 [ext_resource type="PackedScene" uid="uid://dsvg7q1jaa5bo" path="res://lessons/simple_obstacle.tscn" id="3_fkruu"]
+[ext_resource type="PackedScene" uid="uid://c011k4c66md7x" path="res://lessons/bouncer.tscn" id="3_gxsfw"]
 [ext_resource type="PackedScene" uid="uid://cas0hvyk0d8yh" path="res://lessons/circuit.tscn" id="4_lo4cd"]
 [ext_resource type="Theme" uid="uid://cdcyvsn1fp8wa" path="res://assets/countdown/count_down_theme.tres" id="7_uhda7"]
 [ext_resource type="Script" path="res://assets/countdown/count_down.gd" id="8_cqr4a"]
@@ -14,10 +15,11 @@
 y_sort_enabled = true
 script = ExtResource("1_1tkft")
 
-[node name="Runner" parent="." instance=ExtResource("2_q5rld")]
-unique_name_in_owner = true
+[node name="CircuitBackground" type="Sprite2D" parent="."]
 process_mode = 1
-position = Vector2(-1236, -196)
+z_index = -1
+texture = ExtResource("1_b46nt")
+metadata/_edit_lock_ = true
 
 [node name="FinishLine" parent="." instance=ExtResource("3_b2ovx")]
 unique_name_in_owner = true
@@ -25,11 +27,14 @@ process_mode = 1
 position = Vector2(-1341, -160)
 area_width = 256
 
-[node name="CircuitBackground" type="Sprite2D" parent="."]
+[node name="Runner" parent="." instance=ExtResource("2_q5rld")]
+unique_name_in_owner = true
 process_mode = 1
-z_index = -1
-texture = ExtResource("1_b46nt")
-metadata/_edit_lock_ = true
+position = Vector2(-780, -736)
+
+[node name="Bouncer" parent="." instance=ExtResource("3_gxsfw")]
+unique_name_in_owner = true
+position = Vector2(-1297, -186)
 
 [node name="SimpleObstacle" parent="." instance=ExtResource("3_fkruu")]
 position = Vector2(380, -808)
