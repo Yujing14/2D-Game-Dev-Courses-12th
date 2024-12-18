@@ -8,7 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://cas0hvyk0d8yh" path="res://lessons/circuit.tscn" id="4_lo4cd"]
 [ext_resource type="Theme" uid="uid://cdcyvsn1fp8wa" path="res://assets/countdown/count_down_theme.tres" id="7_uhda7"]
 [ext_resource type="Script" path="res://assets/countdown/count_down.gd" id="8_cqr4a"]
-[ext_resource type="PackedScene" uid="uid://dnh7bqw83sxef" path="res://pause_screen.tscn" id="9_qo8kh"]
+[ext_resource type="PackedScene" uid="uid://dnh7bqw83sxef" path="res://lessons/pause_screen.tscn" id="9_qo8kh"]
 
 [node name="Game" type="Node2D"]
 y_sort_enabled = true
@@ -72,5 +72,4 @@ script = ExtResource("8_cqr4a")
 
 [node name="PauseScreen" parent="CanvasLayer" instance=ExtResource("9_qo8kh")]
 process_mode = 3
-animation_duration = 2.3
 menu_opened_amount = 1.0
